@@ -12,10 +12,63 @@
 			href="./images/favicon-32x32.png"
 		/>
 
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap"
+			rel="stylesheet"
+		/>
+
 		<title>Frontend Mentor | Base Apparel coming soon page</title>
 
-		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 		<style>
+			body {
+				font-family: "Josefin Sans", sans-serif;
+				font-optical-sizing: auto;
+				font-weight: 400;
+				font-style: normal;
+				font-size: 16px;
+				line-height: 28px;
+				color: #ce9898;
+			}
+
+			h1 {
+				text-transform: uppercase;
+				font-weight: 600;
+				letter-spacing: 17px;
+				color: #423a3a;
+				line-height: 71px;
+				font-size: 4em;
+			}
+			.we {
+				color: #ce9898;
+				font-weight: 300;
+				line-height: 64px;
+			}
+
+			.coming-soon-section {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 100%;
+			}
+			.inner {
+				display: flex;
+				flex-direction: column;
+				flex-basis: 50%;
+				flex: 1;
+			}
+			.content-wrapper {
+				height: 100%;
+			}
+			.media-wrapper {
+				height: 100%;
+			}
+			@media screen and (max-width: 800px) {
+				.inner {
+					flex: 2;
+				}
+			}
 			.attribution {
 				font-size: 11px;
 				text-align: center;
@@ -26,11 +79,40 @@
 		</style>
 	</head>
 	<body>
-		We're coming soon Hello fellow shoppers! We're currently building our new
-		fashion store. Add your email below to stay up-to-date with announcements
-		and our launch deals. Email Address
-
-		<footer>
+		<section class="coming-soon-section">
+			<div class="inner">
+				<div class="content-wrapper">
+					<div class="logo-wrapper">
+						<img class="logo" src="images/logo.svg" />
+					</div>
+					<div class="text-box">
+						<h1><span class="we">We're</span><br />coming<br />soon</h1>
+						<p>
+							Hello fellow shoppers! We're currently building our new fashion
+							store. Add your email below to stay up-to-date with announcements
+							and our launch deals.
+						</p>
+						<form action="/submit" class="email-form">
+							<label for="email">Email Address</label>
+							<input
+								type="email"
+								placeholder="Email Address"
+								name="email"
+								id="email"
+								required
+							/>
+							<input type="submit" value="src=images/icon-arrow.svg" />
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="media-wrapper">
+					<img src="images/hero-desktop.jpg" />
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
 			<p class="attribution">
 				Challenge by
 				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
