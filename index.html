@@ -23,6 +23,12 @@
 
 		<style>
 			body {
+				background: hsl(0, 36%, 70%);
+				background: linear-gradient(
+					135deg,
+					hsl(0, 0%, 100%) 0%,
+					hsl(0, 100%, 98%) 100%
+				);
 				font-family: "Josefin Sans", sans-serif;
 				font-optical-sizing: auto;
 				font-weight: 400;
@@ -31,7 +37,10 @@
 				line-height: 28px;
 				color: #ce9898;
 			}
+			.project-wrapper {
 
+				max-width: 80vh;
+			}
 			h1 {
 				text-transform: uppercase;
 				font-weight: 600;
@@ -40,34 +49,51 @@
 				line-height: 71px;
 				font-size: 4em;
 			}
+			.coming-soon-section {
+				position: relative;
+			}
+			.logo-wrapper {
+				padding-top: clamp(2rem, 2.857vw + 1.429rem, 4rem);
+				padding-left: clamp(2rem, 11.857vw + -0.371rem, 10.3rem);
+				padding-bottom: clamp(2rem, 2.857vw + 1.429rem, 4rem);
+			}
+			.media-wrapper-mobile {
+				width: 100vw;
+				margin: 0;
+				padding: 0;
+				object-fit: contain;
+				position: absolute;
+			}
+			.media-mobile {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+			}
 			.we {
 				color: #ce9898;
 				font-weight: 300;
 				line-height: 64px;
 			}
+			p {
+				margin-top: clamp(1rem, 1.429vw + 0.714rem, 2rem);
+			}
 
-			.coming-soon-section {
-				display: flex;
-				flex-direction: row;
-				flex-wrap: wrap;
-				width: 100%;
-			}
-			.inner {
-				display: flex;
-				flex-direction: column;
-				flex-basis: 50%;
-				flex: 1;
-			}
 			.content-wrapper {
-				height: 100%;
+				align-content: center;
+				padding: 0 0 0 clamp(2rem, 11.857vw + -0.371rem, 10.3rem);
+				width: clamp(19.43rem, 11.971vw + 17.036rem, 27.81rem);
 			}
-			.media-wrapper {
-				height: 100%;
+			.text-box {
+				align-content: center;
+				text-align: center;
 			}
-			@media screen and (max-width: 800px) {
-				.inner {
-					flex: 2;
-				}
+			.email-form {
+				margin-top: clamp(1rem, 1.429vw + 0.714rem, 2rem);
+				text-align: left;
+			}
+			.media-wrapper-desktop {
+				display: none;
 			}
 			.attribution {
 				font-size: 11px;
@@ -76,15 +102,35 @@
 			.attribution a {
 				color: hsl(228, 45%, 44%);
 			}
+			@media (min-width: 800px) {
+				.media-wrapper-mobile {
+					display: none;
+				}
+				.media-wrapper-desktop {
+					display: flex;
+				}
+				.text-box {
+					text-align: left;
+				}
+			}
 		</style>
 	</head>
 	<body>
+		<div class="project-wrapper">
+			<div class="logo-wrapper">
+				<img class="logo" src="images/logo.svg" />
+			</div>
+		</header>
 		<section class="coming-soon-section">
+			<div class="media-wrapper-mobile">
+				<img
+					src="images/hero-mobile.jpg"
+					alt="model with orange shirt"
+					class="media-mobile"
+				/>
+			</div>
 			<div class="inner">
 				<div class="content-wrapper">
-					<div class="logo-wrapper">
-						<img class="logo" src="images/logo.svg" />
-					</div>
 					<div class="text-box">
 						<h1><span class="we">We're</span><br />coming<br />soon</h1>
 						<p>
@@ -107,11 +153,12 @@
 				</div>
 			</div>
 			<div class="inner">
-				<div class="media-wrapper">
-					<img src="images/hero-desktop.jpg" />
+				<div class="media-wrapper-desktop">
+					<img src="images/hero-desktop.jpg" alt="model with orange shirt" />
 				</div>
 			</div>
 		</section>
+		</div>
 		<footer class="footer">
 			<p class="attribution">
 				Challenge by
