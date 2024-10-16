@@ -4,25 +4,21 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- displays site properly based on user's device -->
-
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
 			href="./images/favicon-32x32.png"
 		/>
-
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap"
 			rel="stylesheet"
 		/>
-
 		<title>Frontend Mentor | Base Apparel coming soon page</title>
-
 		<style>
-			body {
+			.project-wrapper {
 				background: hsl(0, 36%, 70%);
 				background: linear-gradient(
 					135deg,
@@ -33,64 +29,61 @@
 				font-optical-sizing: auto;
 				font-weight: 400;
 				font-style: normal;
-				font-size: 16px;
-				line-height: 28px;
+				font-size: 14px;
+				line-height: 22px;
 				color: #ce9898;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
 			}
-			.project-wrapper {
 
-				max-width: 80vh;
-			}
-			h1 {
-				text-transform: uppercase;
-				font-weight: 600;
-				letter-spacing: 17px;
-				color: #423a3a;
-				line-height: 71px;
-				font-size: 4em;
-			}
-			.coming-soon-section {
-				position: relative;
-			}
 			.logo-wrapper {
-				padding-top: clamp(2rem, 2.857vw + 1.429rem, 4rem);
-				padding-left: clamp(2rem, 11.857vw + -0.371rem, 10.3rem);
-				padding-bottom: clamp(2rem, 2.857vw + 1.429rem, 4rem);
+				padding: 2rem 0 0 2rem;
+			}
+			.logo {
+				width: clamp(6.25rem, 5.186vw + 5.213rem, 9.88rem);
 			}
 			.media-wrapper-mobile {
-				width: 100vw;
-				margin: 0;
+				margin: 2em 0 0 0;
 				padding: 0;
-				object-fit: contain;
-				position: absolute;
 			}
 			.media-mobile {
 				width: 100%;
 				margin: 0;
 				padding: 0;
-				position: absolute;
+			}
+			.content-wrapper {
+				align-content: center;
+				text-align: center;
+				margin: clamp(4rem, 6.429vw + 2.714rem, 8.5rem) auto
+					clamp(5.75rem, 6.257vw + 4.499rem, 10.13rem);
+				max-width: 311px;
+			}
+
+			h1 {
+				text-transform: uppercase;
+				font-weight: 500;
+				letter-spacing: 10.83px;
+				color: #423a3a;
+				line-height: 42px;
+				font-size: 40px;
+				margin: 0;
 			}
 			.we {
 				color: #ce9898;
 				font-weight: 300;
-				line-height: 64px;
+				line-height: 42px;
+				letter-spacing: 10.83px;
 			}
 			p {
-				margin-top: clamp(1rem, 1.429vw + 0.714rem, 2rem);
-			}
-
-			.content-wrapper {
-				align-content: center;
-				padding: 0 0 0 clamp(2rem, 11.857vw + -0.371rem, 10.3rem);
-				width: clamp(19.43rem, 11.971vw + 17.036rem, 27.81rem);
-			}
-			.text-box {
-				align-content: center;
-				text-align: center;
+				margin-top: 2rem;
+				max-width: ;
 			}
 			.email-form {
-				margin-top: clamp(1rem, 1.429vw + 0.714rem, 2rem);
-				text-align: left;
+				margin-top: 2rem;
 			}
 			.media-wrapper-desktop {
 				display: none;
@@ -102,54 +95,76 @@
 			.attribution a {
 				color: hsl(228, 45%, 44%);
 			}
+
 			@media (min-width: 800px) {
+				.project-wrapper {
+					flex-direction: row;
+					width: 100%;
+					max-width: 1440px;
+					padding: 0 0 0 clamp(2rem, 11.857vw + -0.371rem, 10.3rem);
+					max-height: 800px;
+					position: relative;
+					align-items: right;
+				}
+				.logo-wrapper {
+					padding: 2rem 0 0;
+				}
 				.media-wrapper-mobile {
 					display: none;
 				}
 				.media-wrapper-desktop {
 					display: flex;
+					height: 100%;
+					margin: 0;
+					padding: 0;
 				}
-				.text-box {
+				.media-desktop {
+					width: 100%;
+					margin: 0;
+					padding: 0;
+				}
+				.content-wrapper {
+					width: 100%;
+					align-content: left;
 					text-align: left;
+				}
+				.email-form {
+					margin-top: 2.5rem;
 				}
 			}
 		</style>
 	</head>
 	<body>
 		<div class="project-wrapper">
-			<div class="logo-wrapper">
-				<img class="logo" src="images/logo.svg" />
-			</div>
-		</header>
-		<section class="coming-soon-section">
-			<div class="media-wrapper-mobile">
-				<img
-					src="images/hero-mobile.jpg"
-					alt="model with orange shirt"
-					class="media-mobile"
-				/>
-			</div>
 			<div class="inner">
+				<div class="logo-wrapper">
+					<img class="logo" src="images/logo.svg" />
+				</div>
+				<div class="media-wrapper-mobile">
+					<img
+						src="images/hero-mobile.jpg"
+						alt="model with orange shirt"
+						class="media-mobile"
+					/>
+				</div>
 				<div class="content-wrapper">
-					<div class="text-box">
-						<h1><span class="we">We're</span><br />coming<br />soon</h1>
-						<p>
-							Hello fellow shoppers! We're currently building our new fashion
-							store. Add your email below to stay up-to-date with announcements
-							and our launch deals.
-						</p>
-						<form action="/submit" class="email-form">
-							<label for="email">Email Address</label>
-							<input
-								type="email"
-								placeholder="Email Address"
-								name="email"
-								id="email"
-								required
-							/>
-							<input type="submit" value="src=images/icon-arrow.svg" />
-						</form>
-					</div>
+					<h1><span class="we">We're</span><br />coming<br />soon</h1>
+					<p>
+						Hello fellow shoppers! We're currently building our new fashion
+						store. Add your email below to stay up-to-date with announcements
+						and our launch deals.
+					</p>
+					<form action="/submit" class="email-form">
+						<label for="email">Email Address</label>
+						<input
+							type="email"
+							placeholder="Email Address"
+							name="email"
+							id="email"
+							required
+						/>
+						<input type="submit" value="src=images/icon-arrow.svg" />
+					</form>
 				</div>
 			</div>
 			<div class="inner">
@@ -157,7 +172,6 @@
 					<img src="images/hero-desktop.jpg" alt="model with orange shirt" />
 				</div>
 			</div>
-		</section>
 		</div>
 		<footer class="footer">
 			<p class="attribution">
