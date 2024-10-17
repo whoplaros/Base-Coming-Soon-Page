@@ -19,11 +19,11 @@
 		<title>Frontend Mentor | Base Apparel coming soon page</title>
 		<style>
 			.project-wrapper {
-				background: hsl(0, 36%, 70%);
+				background: rgb(255, 255, 255);
 				background: linear-gradient(
-					135deg,
-					hsl(0, 0%, 100%) 0%,
-					hsl(0, 100%, 98%) 100%
+					172deg,
+					rgba(255, 255, 255, 1) 0%,
+					rgba(255, 244, 244, 0.5) 100%
 				);
 				font-family: "Josefin Sans", sans-serif;
 				font-optical-sizing: auto;
@@ -83,9 +83,9 @@
 			.email-form {
 				margin-top: 2rem;
 				width: 100%;
-				border: 1px solid #ce9898;
+				border: 1px solid hsla(0, 36%, 70%, 0.5);
 				border-radius: 28px;
-				height: 56px;
+				height: 48px;
 				display: flex;
 				align-content: center;
 				justify-content: space-between;
@@ -104,7 +104,7 @@
 			}
 			input[type="email"] {
 				color: hsl(0, 36%, 70%);
-				padding-left: 2rem;
+				padding-left: 1.5rem;
 				line-height: 28px;
 				border: none;
 				background-color: rgba(0, 0, 0, 0);
@@ -116,8 +116,7 @@
 					rgba(248, 191, 191, 1) 0%,
 					rgba(238, 139, 139, 1) 100%
 				);
-				background-image: url("images/icon-arrow.svg");
-				width: 100px;
+				width: 64px;
 				border-radius: 28px;
 				border: none;
 
@@ -150,6 +149,12 @@
 					align-items: stretch;
 					padding: 0 0 0 clamp(2rem, 11.857vw + -0.371rem, 10.3rem);
 					margin-top: 2rem;
+					background: hsl(0, 36%, 70%);
+					background: linear-gradient(
+						135deg,
+						hsl(0, 0%, 100%) 0%,
+						hsl(0, 100%, 98%) 100%
+					);
 				}
 				.logo-wrapper {
 					padding: 4rem 0 0;
