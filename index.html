@@ -36,7 +36,6 @@
 				display: flex;
 				flex-direction: column;
 				max-width: 1440px;
-
 				margin: 0 auto;
 			}
 
@@ -108,6 +107,13 @@
 				line-height: 28px;
 				border: none;
 				background-color: rgba(0, 0, 0, 0);
+				width: 100%;
+			}
+			.error-icon {
+				display: block;
+				margin: auto 8px;
+				width: 24px;
+				height: 24px;
 			}
 			.input-button {
 				background: rgb(248, 191, 191);
@@ -119,17 +125,32 @@
 				width: 64px;
 				border-radius: 28px;
 				border: none;
-
 				background-repeat: no-repeat;
 				background-position: center;
 				cursor: pointer;
 				transition: all ease-in-out 0.3s;
+				position: relative;
 			}
 			.input-button:hover {
 				-webkit-box-shadow: 0px 15px 20px 0px rgba(198, 110, 110, 0.25);
 				-moz-box-shadow: 0px 15px 20px 0px rgba(198, 110, 110, 0.25);
 				box-shadow: 0px 15px 20px 0px rgba(198, 110, 110, 0.25);
 				background: rgba(248, 191, 191, 1);
+			}
+			.input-button:after {
+				content: url("images/icon-arrow.svg");
+				position: absolute;
+				opacity: 1;
+				top: 14px;
+				right: 16px;
+				transition: 0.5s;
+			}
+			.error-message {
+				color: #f96464;
+				font-size: 13px;
+				text-align: left;
+				padding-left: 1.5rem;
+				margin-top: 0.5rem;
 			}
 			.media-wrapper-desktop {
 				display: none;
@@ -177,6 +198,15 @@
 				.email-form {
 					margin-top: 2.5rem;
 				}
+				.error-icon {
+					margin: auto 16px;
+				}
+				.input-button {
+					width: 100px;
+				}
+				.input-button:after {
+					right: 28px;
+				}
 				.media-wrapper-mobile {
 					display: none;
 				}
@@ -218,7 +248,7 @@
 						store. Add your email below to stay up-to-date with announcements
 						and our launch deals.
 					</p>
-					<form action="/submit" class="email-form">
+					<form action="/submit" class="email-form" id="email-form" novalidate>
 						<label for="email">Email Address</label>
 						<input
 							type="email"
@@ -227,8 +257,19 @@
 							id="email"
 							required
 						/>
-						<input type="submit" value="" class="input-button" />
+						<img
+							class="error-icon"
+							id="error-icon"
+							src="images/icon-error.svg"
+							alt="error icon"
+						/>
+						<button class="input-button" style="vertical-align: middle">
+							<span></span>
+						</button>
 					</form>
+					<div class="error-message" id="error-message">
+						Please provide a valid email
+					</div>
 				</div>
 			</div>
 			<div class="inner2">
