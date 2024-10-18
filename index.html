@@ -110,7 +110,6 @@
 				width: 100%;
 			}
 			.error-icon {
-				display: block;
 				margin: auto 8px;
 				width: 24px;
 				height: 24px;
@@ -254,7 +253,7 @@
 							type="email"
 							placeholder="Email Address"
 							name="email"
-							id="email"
+							id="email-address"
 							required
 						/>
 						<img
@@ -263,7 +262,11 @@
 							src="images/icon-error.svg"
 							alt="error icon"
 						/>
-						<button class="input-button" style="vertical-align: middle">
+						<button
+							class="input-button"
+							id="input-button"
+							style="vertical-align: middle"
+						>
 							<span></span>
 						</button>
 					</form>
@@ -291,5 +294,35 @@
 				<a href="https://asyouwishratingcomponent.netlify.app/">Netlify</a>.
 			</p>
 		</footer>
+		<script>
+			const form = document.getElementById("email-form");
+			const emailInput = document.getElementById("email-address");
+			const submitButton = document.getElementById("input-button");
+			const errorMessage = document.getElementById("error-message");
+			const errorIcon = document.getElementById("error-icon");
+			errorMessage.style.display = "none";
+			errorIcon.style.display = "none";
+			function validateEmail() {
+				if (emailInput.checkValidity()) {
+					errorMessage.style.display = "block";
+					errorMessage.style.color = "#ce9898";
+					errorMessage.innerHTML = "Thank you for signing up for our email!";
+				} else {
+					errorMessage.style.display = "block";
+					errorIcon.style.display = "inline";
+				}
+				emailInput.value = "";
+			}
+
+			submitButton.addEventListener("click", function (e) {
+				e.preventDefault();
+				validateEmail();
+			});
+
+			emailInput.addEventListener("input", function () {
+				errorMessage.style.display = "none";
+				errorIcon.style.display = "none";
+			});
+		</script>
 	</body>
 </html>
