@@ -38,7 +38,12 @@
 				max-width: 1440px;
 				margin: 0 auto;
 			}
-
+			.inner1 {
+				position: relative;
+			}
+			.overlay-wrapper {
+				display: none;
+			}
 			.logo-wrapper {
 				padding: 2rem 0 0 2rem;
 			}
@@ -167,7 +172,6 @@
 					flex-direction: row;
 					justify-content: space-between;
 					align-items: stretch;
-					padding: 0 0 0 clamp(2rem, 11.857vw + -0.371rem, 10.3rem);
 					margin-top: 2rem;
 					background: hsl(0, 36%, 70%);
 					background: linear-gradient(
@@ -176,14 +180,38 @@
 						hsl(0, 100%, 98%) 100%
 					);
 				}
+				.inner1 {
+					padding: 0 0 0 clamp(2rem, 11.857vw + -0.371rem, 10.3rem);
+					flex-basis: 50%;
+					display: flex;
+					flex-direction: column;
+				}
+				.overlay-wrapper {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					opacity: 1;
+					z-index: 0;
+					display: block;
+				}
+				.overlay-image {
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
 				.logo-wrapper {
 					padding: 4rem 0 0;
+					z-index: 999;
 				}
 				.content-wrapper {
-					align-content: left;
+					margin-left: 0;
 					text-align: left;
 					max-width: 444px;
 					margin-right: 3rem;
+					height: 100%;
+					z-index: 999;
 				}
 				h1 {
 					font-size: 64px;
@@ -230,6 +258,9 @@
 	<body>
 		<div class="project-wrapper">
 			<div class="inner1">
+				<div class="overlay-wrapper">
+					<img class="overlay-image" src="images/bg-pattern-desktop.svg" />
+				</div>
 				<div class="logo-wrapper">
 					<img class="logo" src="images/logo.svg" />
 				</div>
